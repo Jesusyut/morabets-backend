@@ -1,11 +1,11 @@
-
 from flask import Flask, jsonify
 from redis import Redis
 import os
 
 app = Flask(__name__)
 
-redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
+# Use only the provided environment variable (fail if missing)
+redis_url = os.environ["REDIS_URL"]
 redis = Redis.from_url(redis_url)
 
 @app.route("/")
