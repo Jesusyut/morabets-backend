@@ -3,3 +3,4 @@ redis
 apscheduler
 requests
 python-dotenv
+gunicorn
